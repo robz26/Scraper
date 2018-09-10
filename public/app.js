@@ -38,11 +38,12 @@ $(document).on("click", "p", function() {
         $("#titleinput").val(data.note.title);
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
-        document.addEventListener('DOMContentLoaded', function() {
-          var elems = document.querySelectorAll('.modal');
-          var instances = M.Modal.init(elems, options);
-          instances.open();
-        });
+        $("#wrapper").append(`<div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+        <h4>Notes</h4>
+        <p>${data.note.body}</p>
+        </div>
+        </div>`)
       }
     });
 });
